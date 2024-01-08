@@ -10,7 +10,6 @@
 <body>
 
 <form action="/cityBoy/add" th:object="${cityBoy}" method="post">
-    <input type="text" th:field="*{id}" placeholder="Id">
     <input type="text" th:field="*{name}" placeholder="Name">
     <input type="text" th:field="*{age}" placeholder="Age">
     <button>Add</button>

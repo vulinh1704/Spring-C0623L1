@@ -35,13 +35,13 @@ public class CityBoyController {
 
     @PostMapping("/add")
     public String add(@ModelAttribute CityBoy cityBoy) {
-        cityBoyService.add(cityBoy);
+        cityBoyService.save(cityBoy);
         return "redirect:/cityBoy/list";
     }
 
     @GetMapping("/edit/{id}")
-    public ModelAndView showFormEdit(@PathVariable int id) {
-        CityBoy cityBoy = cityBoyService.findElementById(id);
+    public ModelAndView showFormEdit(@PathVariable Long id) {
+        CityBoy cityBoy = cityBoyService.findById(id);
         ModelAndView modelAndView = new ModelAndView("edit");
         modelAndView.addObject("cityBoy", cityBoy);
         return modelAndView;
@@ -49,12 +49,12 @@ public class CityBoyController {
 
     @PostMapping("/edit")
     public String edit(@ModelAttribute CityBoy cityBoy) {
-        cityBoyService.edit(cityBoy.getId(), cityBoy);
+        cityBoyService.save(cityBoy);
         return "redirect:/cityBoy/list";
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable int id) {
+    public String delete(@PathVariable Long id) {
         cityBoyService.delete(id);
         return "redirect:/cityBoy/list";
     }

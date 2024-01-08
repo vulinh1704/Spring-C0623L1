@@ -1,24 +1,33 @@
 package com.codegym.model;
 
+
+import javax.persistence.*;
+
+@Entity
+//@Table(name="city_boy_c06")
 public class CityBoy {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
     private String name;
     private int age;
 
     public CityBoy() {
     }
 
-    public CityBoy(int id, String name, int age) {
+    public CityBoy(Long id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
