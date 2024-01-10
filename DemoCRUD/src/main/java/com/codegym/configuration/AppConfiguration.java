@@ -2,7 +2,7 @@ package com.codegym.configuration;
 
 import com.codegym.model.CityBoy;
 import com.codegym.service.CityBoyService;
-import com.codegym.service.IManager;
+import com.codegym.service.ICityBoyService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -10,6 +10,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -34,6 +35,7 @@ import java.util.Properties;
 @EnableWebMvc
 @ComponentScan("com.codegym")
 @EnableTransactionManagement
+@EnableJpaRepositories("com.codegym.repository")
 public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAware {
     private ApplicationContext applicationContext;
 
@@ -72,7 +74,7 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
     }
 
     @Bean
-    public IManager<CityBoy> cityService() {
+    public ICityBoyService<CityBoy> cityService() {
         return new CityBoyService();
     }
 
