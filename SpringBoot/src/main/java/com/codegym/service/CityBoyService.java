@@ -47,4 +47,9 @@ public class CityBoyService implements ICityBoyService<CityBoy> {
     public CityBoy findCustom(String name, int age) {
         return cityBoyRepository.findCustom(name, age);
     }
+
+    @Override
+    public List<CityBoy> findByTeamsId(Long id) {
+        return cityBoyRepository.findByTeamsId(id);
+    }
 }

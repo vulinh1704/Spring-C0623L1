@@ -11,4 +11,5 @@ public interface ICityBoyService<E>{
     List<E> findByAgeCityBoy(int age);
     List<E> findByNameContaining(String name);
     E findCustom(String name, int age);
+    List<E> findByTeamsId(Long id);
 }

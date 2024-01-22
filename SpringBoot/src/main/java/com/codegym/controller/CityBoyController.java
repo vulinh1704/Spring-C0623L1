@@ -53,5 +53,11 @@ public class CityBoyController {
         return new ResponseEntity<>(cityBoyList, HttpStatus.OK);
     }
 
+    @GetMapping("/teams/{id}")
+    public ResponseEntity<List<CityBoy>> getByTeamsId(@PathVariable Long id) {
+        List<CityBoy> cityBoyList = cityBoyService.findByTeamsId(id);
+        return new ResponseEntity<>(cityBoyList, HttpStatus.OK);
+    }
+
 }
 
