@@ -17,5 +17,5 @@ public interface CityBoyRepository extends JpaRepository<CityBoy, Long> {
     @Query(value = "select * from cityboy where name = :name and age = :age", nativeQuery = true)
     CityBoy findCustom(@Param("name") String name, @Param("age") int age);
 
-    List<CityBoy> findByTeamsId(Long id);
+//    List<CityBoy> findByTeamsId(Long id);
 }

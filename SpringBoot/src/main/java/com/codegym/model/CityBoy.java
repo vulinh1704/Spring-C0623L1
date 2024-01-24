@@ -19,15 +19,15 @@ public class CityBoy {
     @ManyToOne
     private City city;
 
-    @ManyToMany
-    @JoinTable(
-            name = "city_boy_team",
-            joinColumns = {
-                   @JoinColumn(name="city_boy_id", referencedColumnName = "id")
-            },
-            inverseJoinColumns = {
-                   @JoinColumn(name="team_id", referencedColumnName = "id")
-            }
-    )
-    private Set<Team> teams;
+//    @ManyToMany
+//    @JoinTable(
+//            name = "city_boy_team",
+//            joinColumns = {
+//                   @JoinColumn(name="city_boy_id", referencedColumnName = "id")
+//            },
+//            inverseJoinColumns = {
+//                   @JoinColumn(name="team_id", referencedColumnName = "id")
+//            }
+//    )
+//    private Set<Team> teams;
 }

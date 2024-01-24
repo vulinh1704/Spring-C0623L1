@@ -50,6 +50,7 @@ public class CityBoyService implements ICityBoyService<CityBoy> {
 
     @Override
     public List<CityBoy> findByTeamsId(Long id) {
-        return cityBoyRepository.findByTeamsId(id);
+//        return cityBoyRepository.findByTeamsId(id);
+        return null;
     }
 }

@@ -15,6 +15,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/cityBoys")
+@CrossOrigin("*")
 public class CityBoyController {
 
     @Autowired
