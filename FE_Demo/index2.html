@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .input-hidden {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .my-button {
+            background-color: #57349d;
+            width: 100px;
+            height: 20px;
+            display: block;
+            color: white;
+        }
+
+        #elementToHide {
+            padding: 10px;
+            border: 1px solid black;
+            background-color: pink;
+        }
+
+        #toggle:checked ~ #elementToHide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<input type="checkbox" id="toggle" class="input-hidden">
+<label for="toggle" class="my-button">ẨN/HIỆN</label>
+<div id="elementToHide">
+    Đây là phần tử sẽ bị ẩn khi nhấn nút.
+</div>
+</body>
+</html>
